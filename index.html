@@ -4,10 +4,89 @@
     <meta charset="UTF-8">
     <title>JJS's 홈페이지</title>
     <link rel="stylesheet" href="style.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+        $(function(){
+            $(".navi>li").mouseover(function(){
+                $(this).find(".submenu").stop().slideDown(500);
+            });
+            
+            $(".navi>li").mouseout(function(){
+                $(this).find(".submenu").stop().slideUp(500); 
+           });
+            
+            $(".notice").mouseover(function(){
+               $("#op1").css("opacity", "0.7"); 
+            });
+            
+            $(".notice").mouseout(function(){
+               $("#op1").css("opacity", "1.0"); 
+            });
+          
+            $(".banner1").mouseover(function(){
+                $("#op2").attr("src", "image/prod1.jpg");
+            });
+            
+            $(".banner1").mouseout(function(){
+                $("#op2").attr("src", "image/prod2.jpg");
+            });
+            
+            $(".banner2").mouseover(function(){
+                $("#op3").fadeIn("slow");
+            });
+            
+            $(".banner2").mouseout(function(){
+                $("#op3").fadeOut("slow");
+            });
+            
+//유형1
+//            $(".slider div:gt(0)").hide();
+//            setInterval(function(){
+//                $(".slider div:first-child").fadeOut().next("div").fadeIn().end().appendTo(".slider");}, 3000);
+//유형2
+//            var c=0;
+//            var s;
+//            setInterval(function(){
+//                if(c<2){c++;}
+//                else{c=0;}
+//                s=c*(-500)+"px";
+//                $(".ibox").animate({top:s});
+//            }, 3000);
+//유형3
+//            var c=0;
+//            var s;
+//            setInterval(function(){
+//                if(c<2){
+//                    c++;
+//                }
+//                else{
+//                    c=0;
+//                }
+//                s=c*(-2000)+"px";
+//                $(".ibox").animate({left:s}, 400);
+//            }, 3000);
+//유형4
+            var current=0;
+            setInterval(function(){
+                var next=(current+1)%3;
+                $(".slider").find("div").eq(current).fadeOut();
+                $(".slider").find("div").eq(next).fadeIn();
+                current=next;
+            }, 3000);   
+        });
+    </script>
 </head>
 <body>
    <header>
-       이미지
+        <div class="logo">
+           <img src="image/cat.jpg" alt="" width="230px" height="80px">
+        </div>
+        <div id="s-menu">
+            <a href="login.html">로그인</a> | <a href="fieldset.html">회원가입</a> | <a href="#">마이페이지</a> | <a href="#">이용안내</a> | <a href="#">고객센터</a>
+        </div>
    </header>
     <nav>
        <!--메인메뉴-->
@@ -16,31 +95,31 @@
                <a href="">수업미션</a>
                <!--서브메뉴-->
                 <ul class="submenu">
-                    <li><a href="">미션1-메뉴만들기</a></li>
-                    <li><a href="">미션2</a></li>
-                    <li><a href="">미션3</a></li>
-                    <li><a href="">미션4</a></li>
-                    <li><a href="">미션5</a></li>
+                    <li><a href="table.html" target="ifr">미션1-테이블</a></li>
+                    <li><a href="product.html" target="ifr">미션2-상품소개</a></li>
+                    <li><a href="box.html" target="ifr">미션3-박스모델</a></li>
+                    <li><a href="position.html" target="ifr">미션4-포지션</a></li>
+                    <li><a href="z-index.html" target="ifr">미션5-z-index</a></li>
                 </ul>
             </li>
             <li>
                <a href="">나의작품</a>
                 <ul class="submenu">
-                    <li><a href="">작품1</a></li>
-                    <li><a href="">작품2</a></li>
-                    <li><a href="">작품3</a></li>
-                    <li><a href="">작품4</a></li>
-                    <li><a href="">작품5</a></li>
+                    <li><a href="#">작품1</a></li>
+                    <li><a href="#">작품2</a></li>
+                    <li><a href="#">작품3</a></li>
+                    <li><a href="#">작품4</a></li>
+                    <li><a href="#">작품5</a></li>
                 </ul>
             </li>
             <li>
-               <a href="">구매상품</a>
+               <a href="" id="m">모달</a>
                 <ul class="submenu">
-                    <li><a href="">긴바지</a></li>
-                    <li><a href="">니트</a></li>
-                    <li><a href="">짧은바지</a></li>
-                    <li><a href="">스커트</a></li>
-                    <li><a href="">데님</a></li>
+                    <li><a href="#">긴바지</a></li>
+                    <li><a href="#">니트</a></li>
+                    <li><a href="#">짧은바지</a></li>
+                    <li><a href="#">스커트</a></li>
+                    <li><a href="#">데님</a></li>
                 </ul>
             </li>
             <li>
@@ -56,59 +135,17 @@
         </ul>
     </nav>
     <section>
-       <div class="imgslide">
-           이미지 슬라이드 자리
-       </div>
-       <div class="contents">
-           <div class="notice">
-               공지사항
-            </div>
-           <div class="banner1">
-               배너 자리
-           </div>
-           <div class="banner2">
-               바로가기 자리
-           </div>
-       </div>
-       <div class="prod">
-           <h1>신상품 목록</h1>
-           <ul class="prod-list">
-               <li>
-                   <img src="image/prod1.jpg" alt="">
-                   <div class="caption">
-                       <h1>상품1</h1>
-                       <p>베리</p>
-                       <p>가격 12,345</p>
-                   </div>
-               </li>
-               <li>
-                   <img src="image/prod2.jpg" alt="">
-                   <div class="caption">
-                       <h1>상품2</h1>
-                       <p>석류</p>
-                       <p>가격 12,345</p>
-                   </div>
-               </li>
-               <li>
-                   <img src="image/prod3.jpg" alt="">
-                   <div class="caption">
-                       <h1>상품3</h1>
-                       <p>야채</p>
-                       <p>가격 12,345</p>
-                   </div>
-               </li>
-           </ul>
-       </div>
-       <div style="clear:both;"></div>
-       <div class="photo">
-            <div class="p1"><img src="image/back4.jpg" width="300px" height="200px" alt=""></div>
-            <div class="p2"><img src="image/back5.jpg" width="300px" height="200px" alt=""></div>
-            <div class="p3"><img src="image/back6.jpg" width="300px" height="200px" alt=""></div>
-       </div>
+       <iframe src="main.html" frameborder="0" width="100%" height="600px" name="ifr"></iframe>
     </section>
     <div style="clear:both;"></div>
     <footer>
-        <p>2021 Sejong Cyber University's JJS All Rights Reserved</p>
+        <ul>
+            <li>05000 서울 특별시 광진구 군자로 121 세종사이버대학교</li>
+            <li>대표자 : 신구</li>
+            <li>전화번호 : 02-2204-8000</li>
+            <li>팩스 : 02-2204-8036</li>
+            <li>이메일 : webmaster@sjcu.ac.kr</li>
+        </ul>
     </footer>
 </body>
 </html>
