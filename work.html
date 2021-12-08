@@ -8,7 +8,7 @@
 </head>
 <body>
    <header>
-      <div class="banner">
+      <div id="banner">
            <div class="slider_main">
             <div class="slider">
                 <div class="slider_img">
@@ -31,15 +31,30 @@
       </div>
    </header>
    <aside>
-       <div class="navi"> 
-            메뉴
+      <div class="menubtn">
+          <i class="fas fa-arrow-right"></i></div>
+       <div class="navi">
+            <li class="submenu">
+                <ul><a href="#java">Java</a></ul>
+                <ul><a href="#javascript">JavaScript</a></ul>
+                <ul><a href="#python">Python</a></ul>
+            </li>
        </div>    
    </aside>
     <section>
         <div>
-            <div class="content" id="java">java</div>
-            <div class="content" id="javascript">js</div>
-            <div class="content" id="python">python</div>
+            <div class="content" id="java">
+                <div id="explanation"></div>
+                <div id="framework"></div>
+            </div>
+            <div class="content" id="javascript">
+                <div id="explanation"></div>
+                <div id="framework"></div>
+            </div>
+            <div class="content" id="python">
+                <div id="explanation"></div>
+                <div id="framework"></div>
+            </div>
         </div>
     </section>
     <footer>

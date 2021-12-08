@@ -1,5 +1,5 @@
 header{
-    width: 100%;
+    width: 102%;
     height: 200px;
     position: fixed;
     z-index: 1;
@@ -10,6 +10,9 @@ header{
     height: 200px;
     float: left;
     margin-left: 20.5%;
+}
+#banner.active{
+    display: none;
 }
 .bx-viewport{
     width: 100% !important;
@@ -22,25 +25,45 @@ header{
     margin: auto;
 }
 .btn{
-    width: 15%;
-    height: 150px;
+    width: 13%;
+    height: 200px;
     float: right;
-    padding-top: 6%;
+    margin-right: 3%;
 }
 .btn svg{
     width: 50px !important;
     height: 50px !important;
-    margin: auto;
+    padding-top: 55px;
 }
 aside{
-    width: 150px;
+    width: 200px;
     height: 500px;
+    position: fixed;
+    z-index: 1;
+    margin-right: -20px;
+}
+.menubtn{
+    width: 47.8px;
+    height: 47.8px;
+    float: left;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.menubtn svg{
+    width: 47.8px !important;
+    height: 47.7px !important;
+}
+.submenu{
+    width: 150px;
+    height: 400px;
+    padding-top: 100px;
+    background-color: #000;
+    list-style-type: none;
     float: right;
-    display: none;
 }
 section{
     margin-top: 210px; 
-    width: 100%;
+    width: 102%;
 }
 .content{
     width: 100px;
