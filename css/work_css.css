@@ -40,17 +40,20 @@ aside{
     height: 500px;
     position: fixed;
     z-index: 1;
-    margin-right: -20px;
+    right: 0%;
 }
-.menubtn{
+#menubtn{
     width: 47.8px;
     height: 47.8px;
-    float: left;
     border: 1px solid black;
     border-radius: 10px;
 }
-.menubtn svg{
-    width: 47.8px !important;
+#menubtn.active{
+    position: absolute;
+    right: 0%;
+}
+#menubtn svg{
+    width: 47.7px !important;
     height: 47.7px !important;
 }
 .submenu{
@@ -60,6 +63,7 @@ aside{
     background-color: #000;
     list-style-type: none;
     float: right;
+    display: none;
 }
 section{
     margin-top: 210px; 
