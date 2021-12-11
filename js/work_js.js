@@ -27,4 +27,12 @@ $(document).ready(function(){
         }
     });
     
+        $(".content").mouseover(function(){
+            $(this).find("p").stop().slideDown(500);
+        });
+            
+        $(".content").mouseout(function(){
+            $(this).find("p").stop().slideUp(500); 
+        });
+    
 });
